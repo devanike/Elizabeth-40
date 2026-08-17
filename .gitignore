@@ -1,0 +1,18 @@
+# dependencies
+node_modules/
+
+dist/
+
+images/
+audio-source/
+
+implementation.md
+
+shots/
+
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+*.bak

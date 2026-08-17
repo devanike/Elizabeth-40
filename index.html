@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Elizabeth @ 40</title>
+<meta name="description" content="Forty years of God's faithfulness. Come celebrate with me. Las Vegas, 16 October.">
+<meta name="theme-color" content="#F7F4EF">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Elizabeth @ 40">
+<meta property="og:title" content="Elizabeth @ 40">
+<meta property="og:description" content="Forty years of God's faithfulness. Come celebrate with me. Las Vegas, 16 October.">
+<meta property="og:image" content="https://SITE_URL/share-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Elizabeth, celebrating forty years.">
+<meta property="og:url" content="https://SITE_URL/">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preload" as="font" type="font/woff2" href="/fonts/scr-great-vibes.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/par-jost.woff2" crossorigin>
+<link rel="stylesheet" href="/src/styles.css">
+</head>
+<body>
+
+<!-- the opening -->
+<div class="gate" id="gate">
+  <div class="card is-idle" id="card" role="button" tabindex="0" aria-label="Open the invitation">
+    <picture class="card__img">
+      <source type="image/avif" srcset="/photos/img-8283-480.avif 480w, /photos/img-8283-960.avif 960w" sizes="(min-width:600px) 350px, 76vw">
+      <source type="image/webp" srcset="/photos/img-8283-480.webp 480w, /photos/img-8283-960.webp 960w" sizes="(min-width:600px) 350px, 76vw">
+      <img src="/photos/img-8283-960.jpg" alt="Elizabeth" fetchpriority="high" decoding="async">
+    </picture>
+
+    <!-- paper sleeve, slides off before the card lifts -->
+    <div class="card__band" id="cardBand">
+      <p class="card__name">Elizabeth</p>
+      <p class="card__at"><i>&#64;</i>40</p>
+      <p class="card__date">16 October 2026</p>
+    </div>
+  </div>
+
+  <p class="gate__cue" id="gateCue"><i aria-hidden="true"></i><span>Tap to open</span></p>
+</div>
+
+<audio id="track" loop preload="metadata" playsinline>
+  <source src="/audio/theme.mp3" type="audio/mpeg">
+</audio>
+
+<div class="controls" id="controls" hidden>
+  <button class="ctl" id="theme" type="button" aria-label="Switch to dark theme">
+    <span class="ctl__swatch" aria-hidden="true"></span>
+    <span class="ctl__tip" id="themeTip">Theme</span>
+  </button>
+  <button class="ctl" id="sound" type="button" hidden aria-pressed="true" aria-label="Mute music">
+    <span class="ctl__bars" aria-hidden="true"><i></i><i></i><i></i></span>
+    <span class="ctl__tip" id="soundTip">Music</span>
+  </button>
+</div>
+
+<main id="main" class="locked">
+
+  <!-- hero -->
+  <section class="hero" id="hero">
+    <div class="hero__media" id="heroMedia">
+      <picture>
+        <source type="image/avif" srcset="/photos/img-8283-960.avif 960w, /photos/img-8283-1440.avif 1440w" sizes="100vw">
+        <source type="image/webp" srcset="/photos/img-8283-960.webp 960w, /photos/img-8283-1440.webp 1440w" sizes="100vw">
+        <img src="/photos/img-8283-1440.jpg" alt="Elizabeth" decoding="async">
+      </picture>
+    </div>
+    <div class="hero__copy">
+      <h1 class="hero__name" data-split>Elizabeth <i>&#64;</i> 40</h1>
+      <p class="hero__meta">
+        <span data-split>Friday 16 October 2026</span>
+        <span class="hero__dot" aria-hidden="true">&middot;</span>
+        <span data-split>London Events &middot; Las Vegas</span>
+      </p>
+    </div>
+    <div class="cue" aria-hidden="true">
+      <span class="cue__word">Scroll</span>
+      <span class="cue__rule"><i></i></span>
+    </div>
+  </section>
+
+  <!-- photographs inside the numerals -->
+  <section class="numerals" id="numerals" aria-label="Photographs of Elizabeth">
+    <p class="numerals__text" aria-hidden="true">40</p>
+    <p class="numerals__line" data-rise data-anim="blur">and every one of them lived fully</p>
+  </section>
+
+  <!-- the celebrant -->
+  <section class="story" id="story">
+    <div class="story__portrait" id="storyPortrait"></div>
+    <div class="story__copy">
+      <p class="label" data-rise data-anim="left">The celebrant</p>
+      <h2 class="story__name" data-rise data-anim="left">Elizabeth</h2>
+      <p data-rise>Forty years of grace, of building, of showing up for the people she loves. This October she turns forty, and she would like the room full of the people who got her here.</p>
+    </div>
+    <div class="story__family" id="storyFamily">
+      <p class="story__cap" data-rise data-anim="right">And the people who got her here.</p>
+    </div>
+  </section>
+
+  <!-- the sliding rows -->
+  <section class="reel" id="reel" aria-label="More photographs">
+    <div class="reel__head">
+      <p class="label" data-rise data-anim="left">The photographs</p>
+      <h2 data-split>Elizabeth, lately</h2>
+    </div>
+    <div class="reel__rows">
+      <div class="reel__row reel__row--a" id="reelA"></div>
+      <div class="reel__row reel__row--b" id="reelB"></div>
+      <div class="reel__row reel__row--c" id="reelC"></div>
+    </div>
+  </section>
+
+  <!-- the evening -->
+  <section class="evening" id="evening">
+    <div class="evening__head">
+      <p class="label" data-rise>The evening</p>
+      <h2 class="head" data-split>How the night runs</h2>
+    </div>
+    <div class="spine">
+      <span class="spine__rail" aria-hidden="true"><i id="spineFill"></i></span>
+      <div class="spine__items" id="slots" data-stagger></div>
+      <div class="spine__items spine__items--crew" id="crew" data-stagger></div>
+    </div>
+  </section>
+
+  <!-- venue -->
+  <section class="venue" id="venue">
+    <div class="venue__inner">
+      <p class="label" data-rise data-anim="left">The address</p>
+      <h2 class="venue__name" data-split>London Events</h2>
+      <p class="venue__addr" data-rise data-anim="left">2155 E Cheyenne Ave<br>Las Vegas, NV 89030</p>
+      <a class="btn" id="directions" href="#" target="_blank" rel="noopener" data-rise data-anim="left">Get directions</a>
+    </div>
+    <div class="venue__figure" id="venueBg"></div>
+  </section>
+
+  <!-- dress code -->
+  <section class="dress" id="dress">
+    <p class="label" data-rise data-anim="right">What to wear</p>
+    <h2 class="head dress__head" data-rise data-anim="right">The colour of the day is <em>orange</em></h2>
+    <p class="lede" data-rise>Wear it boldly. Any shade, any fabric, head to toe or a single accent.</p>
+    <div class="wheel" id="wheel" data-rise data-anim="rotate">
+      <div class="wheel__ring" id="wheelRing"></div>
+      <div class="wheel__hub">
+        <span class="wheel__name" id="wheelName">Tangerine</span>
+        <span class="wheel__hex" id="wheelHex">#FF6A13</span>
+      </div>
+    </div>
+    <p class="dress__hint" data-rise>Tap a shade to copy it for your tailor.</p>
+  </section>
+
+  <!-- countdown -->
+  <section class="count" id="count">
+    <p class="label" data-rise data-anim="drop">Counting down</p>
+    <ul class="count__grid" id="countGrid" aria-live="polite"></ul>
+    <p class="count__note" data-rise>Las Vegas time</p>
+  </section>
+
+  <!-- thank you -->
+  <section class="thanks" id="thanks">
+    <div class="thanks__portrait" id="thanksPortrait"></div>
+    <div class="thanks__body">
+      <div id="thanksCopy"></div>
+      <p class="thanks__sign" id="thanksSign" data-rise data-anim="scale"></p>
+      <a class="btn" id="rsvp" href="#" target="_blank" rel="noopener" data-rise data-anim="right">RSVP</a>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <p class="foot__script" aria-hidden="true" data-rise data-anim="scale">Elizabeth <i>&#64;</i> 40</p>
+    <div class="foot__rows" data-stagger>
+      <span data-rise>Friday 16 October 2026 &middot; 5:00 PM</span>
+      <span data-rise>London Events &middot; Las Vegas, Nevada</span>
+      <span data-rise><a id="rsvpFoot" href="#" target="_blank" rel="noopener">RSVP</a></span>
+    </div>
+  </footer>
+
+</main>
+
+<!-- full-screen viewer for any photograph -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photographs" hidden>
+  <button class="lightbox__close" id="lightboxClose" type="button" aria-label="Close">&times;</button>
+  <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" type="button" aria-label="Previous photograph">&#8249;</button>
+  <figure><img id="lightboxImg" alt="Elizabeth"></figure>
+  <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" type="button" aria-label="Next photograph">&#8250;</button>
+  <p class="lightbox__count" id="lightboxCount"></p>
+</div>
+
+<script type="module" src="/src/main.ts"></script>
+</body>
+</html>

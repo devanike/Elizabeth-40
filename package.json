@@ -1,0 +1,32 @@
+{
+  "name": "elizabeth-at-40",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "images": "node scripts/build-images.mjs && node scripts/build-strip.mjs",
+    "heic": "node scripts/fix-heic.mjs",
+    "audio": "node scripts/build-audio.mjs",
+    "check": "node scripts/check.mjs",
+    "motion": "node scripts/motion.mjs",
+    "social": "node scripts/build-social.mjs",
+    "domain": "node scripts/set-domain.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "gsap": "^3.15.0"
+  },
+  "private": true,
+  "devDependencies": {
+    "heic-convert": "^2.1.0",
+    "playwright": "^1.62.1",
+    "sharp": "^0.35.3",
+    "vite": "^8.2.1"
+  }
+}
