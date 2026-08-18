@@ -307,6 +307,36 @@ main.locked { display: none; }
     var(--paper) 100%);
 }
 .hero__copy { position: relative; text-align: center; }
+
+@media (min-width: 900px) {
+  /* The photograph is 4:5. Filling a wide window with `cover` crops half of it
+     away vertically, leaving a band across her face. Narrowing the frame to
+     roughly the photograph's own proportion shows almost all of it, with paper
+     either side, and the name spills past the edges onto that paper. */
+  .hero__media {
+    left: 50%;
+    right: auto;
+    width: min(58vw, 720px);
+    translate: -50% 0;
+  }
+  .hero__media img { object-position: 50% 34%; }
+  /* the wash has to fade into paper on all four sides now, not just top and bottom */
+  .hero__media::after {
+    background:
+      linear-gradient(180deg,
+        color-mix(in srgb, var(--paper) 24%, transparent) 0%,
+        transparent 26%,
+        color-mix(in srgb, var(--paper) 82%, transparent) 78%,
+        var(--paper) 100%),
+      linear-gradient(90deg,
+        var(--paper) 0%,
+        transparent 14%,
+        transparent 86%,
+        var(--paper) 100%);
+  }
+}
+
+
 .hero__name {
   font-family: var(--script);
   font-size: clamp(2.4rem, 12.5vw, 8.5rem);  

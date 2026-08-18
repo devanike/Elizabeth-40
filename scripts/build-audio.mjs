@@ -1,7 +1,7 @@
 // Trims the source track to a short loop for the invitation.
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 
-const SRC = 'audio-source/Evi-Edna-Ogholi-Happy-Birthday.mp3';
+const SRC = 'audio-source/Congratulations (Happy Birthday) - King Sunny Ade - Jorge Diaz.mp3';
 const OUT = 'public/audio/theme.mp3';
 
 const START = Number(process.argv[2] ?? 12);

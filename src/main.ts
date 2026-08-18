@@ -405,7 +405,9 @@ function openInvitation(instant = false) {
       ease: 'expo.inOut',
     }, .6)
     .to('.card__img img', { scale: 1, duration: 1.25, ease: 'expo.out' }, .6)
-    .to(gate, { autoAlpha: 0, duration: .3 }, 1.5);
+    // Same photograph underneath at the same crop, so this reads as the hero
+    // settling rather than as a cut.
+    .to(gate, { autoAlpha: 0, duration: .35 }, 1.5);
 }
 
 card.addEventListener('click', () => openInvitation(), { once: true });

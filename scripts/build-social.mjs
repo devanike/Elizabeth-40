@@ -8,7 +8,7 @@ const ORIGIN = process.env.SITE || 'http://localhost:5173';
 const b64 = async f => `data:font/woff2;base64,${(await readFile(f)).toString('base64')}`;
 const SCRIPT_FONT = await b64('public/fonts/scr-great-vibes.woff2');
 const BODY_FONT = await b64('public/fonts/par-jost.woff2');
-const PHOTO = `data:image/jpeg;base64,${(await readFile('public/photos/img-8283-1440.jpg')).toString('base64')}`;
+const PHOTO = `data:image/jpeg;base64,${(await readFile('public/photos/img-8013-1440.jpg')).toString('base64')}`;
 
 const browser = await chromium.launch({ channel: 'msedge' });
 

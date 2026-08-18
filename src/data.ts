@@ -46,7 +46,7 @@ export const event = {
 } as const;
 
 export const featured = {
-  hero: 'img-8283',
+  hero: 'img-8013',
   numerals: ['img-8268', 'img-8256', 'img-8283', 'img-8286'],
 
   storyPortrait: 'img-8268',

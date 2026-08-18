@@ -2,8 +2,6 @@
 
 An animated single-page invitation for a 40th birthday in Las Vegas, built for guests opening one link on a phone from WhatsApp.
 
-Friday 16 October 2026 · cocktails 4:30pm, event 5:00pm · London Events, 2155 E Cheyenne Ave, Las Vegas NV 89030.
-
 ## What it does
 
 A portrait invitation card sits centre screen. Tapping it breaks the sleeve away and the card opens out to fill the screen, becoming the hero photograph, so the guest passes through the invitation rather than closing it.
