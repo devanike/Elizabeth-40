@@ -1,7 +1,8 @@
 // Builds the WhatsApp/iMessage link preview image and the favicons.
 import { chromium } from 'playwright';
 import sharp from 'sharp';
-import { readFile, writeFile, unlink } from 'node:fs/promises';
+import { readFile, writeFile, unlink, readdir } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 
 const ORIGIN = process.env.SITE || 'http://localhost:5173';
 
@@ -12,8 +13,7 @@ const PHOTO = `data:image/jpeg;base64,${(await readFile('public/photos/img-8013-
 
 const browser = await chromium.launch({ channel: 'msedge' });
 
-/* link preview card, 1200x630 */
-
+/* link preview card */
 const card = await browser.newPage({ viewport: { width: 1200, height: 630 }, deviceScaleFactor: 1 });
 await card.setContent(`
   <style>
@@ -45,18 +45,24 @@ await card.screenshot({ path: 'public/_share-raw.png' });
 await card.close();
 
 let quality = 88;
-let size = Infinity;
+let jpeg;
 while (quality >= 60) {
-  await sharp('public/_share-raw.png').jpeg({ quality, mozjpeg: true }).toFile('public/share-card.jpg');
-  size = (await readFile('public/share-card.jpg')).length;
-  if (size < 280 * 1024) break;
+  jpeg = await sharp('public/_share-raw.png').jpeg({ quality, mozjpeg: true }).toBuffer();
+  if (jpeg.length < 280 * 1024) break;
   quality -= 6;
 }
 await unlink('public/_share-raw.png');
-console.log(`share-card.jpg   1200x630, ${(size / 1024).toFixed(0)}KB at q${quality}`);
+
+const hash = createHash('md5').update(jpeg).digest('hex').slice(0, 8);
+const name = `share-card-${hash}.jpg`;
+
+for (const f of await readdir('public')) {
+  if (/^share-card(-[0-9a-f]{8})?\.jpg$/.test(f) && f !== name) await unlink(`public/${f}`);
+}
+await writeFile(`public/${name}`, jpeg);
+console.log(`${name}   1200x630, ${(jpeg.length / 1024).toFixed(0)}KB at q${quality}`);
 
 /* favicons */
-
 const icon = await browser.newPage({ viewport: { width: 512, height: 512 }, deviceScaleFactor: 1 });
 await icon.setContent(`
   <style>
